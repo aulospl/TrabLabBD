@@ -5,68 +5,32 @@
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.65" fx:controller="emissoralabbd.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="emissoralabbd.FXMLDocumentController">
    <children>
-      <TabPane layoutX="109.0" layoutY="67.0" prefHeight="600.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <tabs>
-          <Tab id="tabInserir" text="Inserir">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <GridPane layoutX="-1.0" layoutY="110.0" prefHeight="457.0" prefWidth="801.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="110.0">
-                          <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                          </columnConstraints>
-                          <rowConstraints>
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                          </rowConstraints>
-                        </GridPane>
-                        <Label layoutX="20.0" layoutY="17.0" text="Inserir" />
-                        <ComboBox layoutX="20.0" layoutY="34.0" prefWidth="150.0" />
-                        <Button disable="true" layoutX="700.0" layoutY="34.0" mnemonicParsing="false" text="Inserir" />
-                     </children>
-                  </AnchorPane>
-            </content>
-          </Tab>
-          <Tab id="tabBuscar" text="Buscar">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <ComboBox layoutX="24.0" layoutY="38.0" prefWidth="150.0" />
-                        <Label layoutX="20.0" layoutY="17.0" text="Buscar por..." />
-                        <TableView layoutX="27.0" layoutY="81.0" prefHeight="428.0" prefWidth="752.0">
-                          <columns>
-                            <TableColumn prefWidth="75.0" text="C1" />
-                            <TableColumn prefWidth="75.0" text="C2" />
-                          </columns>
-                        </TableView>
-                        <ButtonBar layoutX="553.0" layoutY="516.0" prefHeight="40.0" prefWidth="223.0">
-                          <buttons>
-                              <Button mnemonicParsing="false" text="Alterar" />
-                            <Button mnemonicParsing="false" text="Deletar" />
-                          </buttons>
-                           <opaqueInsets>
-                              <Insets />
-                           </opaqueInsets>
-                        </ButtonBar>
-                        <Button layoutX="238.0" layoutY="35.0" mnemonicParsing="false" text="Buscar" />
-                     </children>
-                  </AnchorPane>
-            </content>
-          </Tab>
-        </tabs>
-      </TabPane>
+      <ComboBox fx:id="cmboxBuscar" layoutX="16.0" layoutY="28.0" prefHeight="26.0" prefWidth="119.0" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="28.0" />
+      <Label layoutX="16.0" layoutY="11.0" prefHeight="16.0" prefWidth="99.0" text="Buscar por..." AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="11.0" />
+      <TableView fx:id="tableView" layoutX="16.0" layoutY="66.0" prefHeight="488.0" prefWidth="767.0" AnchorPane.bottomAnchor="46.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="66.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
+        </columns>
+      </TableView>
+      <ButtonBar layoutX="586.0" layoutY="558.0" prefHeight="40.0" prefWidth="190.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="586.0" AnchorPane.rightAnchor="14.0">
+        <buttons>
+            <Button fx:id="btnAlterar" mnemonicParsing="false" text="Alterar" />
+          <Button fx:id="btnDeletar" mnemonicParsing="false" text="Deletar" />
+        </buttons>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </ButtonBar>
+      <Button fx:id="btnBuscar" layoutX="142.0" layoutY="28.0" mnemonicParsing="false" text="Buscar" AnchorPane.leftAnchor="142.0" AnchorPane.topAnchor="28.0" />
+      <Button fx:id="btnInserir" layoutX="721.0" layoutY="31.0" mnemonicParsing="false" text="Inserir" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="31.0" />
+      <ComboBox layoutX="555.0" layoutY="31.0" prefWidth="150.0" AnchorPane.rightAnchor="95.0" AnchorPane.topAnchor="31.0" />
+      <Label layoutX="555.0" layoutY="11.0" prefHeight="16.0" prefWidth="132.0" text="Inserir" AnchorPane.rightAnchor="113.0" AnchorPane.topAnchor="11.0" />
    </children>
 </AnchorPane>
