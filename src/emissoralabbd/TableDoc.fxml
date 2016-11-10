@@ -9,7 +9,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="emissoralabbd.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="emissoralabbd.TableDocController">
    <children>
       <ComboBox fx:id="cmboxBuscar" layoutX="16.0" layoutY="28.0" prefHeight="26.0" prefWidth="119.0" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="28.0" />
       <Label layoutX="16.0" layoutY="11.0" prefHeight="16.0" prefWidth="99.0" text="Buscar por..." AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="11.0" />
