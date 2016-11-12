@@ -27,6 +27,12 @@ public class TableDocController implements Initializable {
         label.setText("Hello World!");
     }
     */
+    
+    @FXML
+    private void testButtonAction(ActionEvent event){
+        System.out.println("hi");
+    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
