@@ -35,7 +35,7 @@ public class TableDocController implements Initializable {
         conex.conectaBD("a7986409","alpha7rho");
         try{
             conex.disconectaBD();
-            
+            System.out.println("Desconectado!");
         }
         catch(SQLException ex){
             System.out.println("ERRO: "+ex);

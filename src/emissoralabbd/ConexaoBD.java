@@ -32,7 +32,7 @@ public class ConexaoBD {
         }
         
         try{
-            Connection con = DriverManager.getConnection("jdbc:oracle:thin:@192.168.183.2:1521:orcl", username, password);
+            Connection con = DriverManager.getConnection("jdbc:oracle:thin:@grad.icmc.usp.br:15215:orcl", username, password);
             return con;
         }
         catch(Exception ex){
@@ -46,7 +46,7 @@ public class ConexaoBD {
     * Disconecta da base
     * @param con
     */
-    public void disconectaBD() throws SQLException{
+    public void desconectaBD() throws SQLException{
         this.con.close();
     }
     
