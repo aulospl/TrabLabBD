@@ -11,12 +11,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-
+import java.sql.SQLException;
 /**
  *
  * @author aulos
  */
 public class TableDocController implements Initializable {
+    ConexaoBD conex = new ConexaoBD();
     /*
     @FXML
     private Label label;
@@ -30,7 +31,15 @@ public class TableDocController implements Initializable {
     
     @FXML
     private void testButtonAction(ActionEvent event){
-        System.out.println("hi");
+        System.out.println("hi, i'll now attempt to connect!");
+        conex.conectaBD("a7986409","alpha7rho");
+        try{
+            conex.disconectaBD();
+            
+        }
+        catch(SQLException ex){
+            System.out.println("ERRO: "+ex);
+        }
     }
     
     @Override

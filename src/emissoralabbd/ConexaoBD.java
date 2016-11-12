@@ -23,7 +23,7 @@ public class ConexaoBD {
     * @param username, password
     * @return Connection
     */
-    public static Connection ConectaBD (String username, String password){
+    public static Connection conectaBD (String username, String password){
         try{
             Class.forName("oracle.jdbc.driver.OracleDriver");
         }
@@ -40,5 +40,29 @@ public class ConexaoBD {
             return null;
         }
     }
+    
+    
+    /*
+    * Disconecta da base
+    * @param con
+    */
+    public void disconectaBD() throws SQLException{
+        this.con.close();
+    }
+    
+    /*
+    * Efetua commit na base
+    */
+    public void commit() throws SQLException{
+        this.con.commit();
+    }
+    
+    /*
+    * Efetua rollback na base
+    */
+    public void rollback() throws SQLException{
+        this.con.rollback();
+    }
+    
     
 }
