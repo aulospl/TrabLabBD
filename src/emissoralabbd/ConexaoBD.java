@@ -18,6 +18,13 @@ public class ConexaoBD {
     private static Connection con;
     
     
+    public void setCon(Connection con){
+        this.con = con;
+    }
+    
+    public Connection getCon(){
+        return this.con;
+    }
     /*
     * Conecta à base de dados
     * @param username, password

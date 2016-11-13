@@ -32,13 +32,18 @@ public class TableDocController implements Initializable {
     @FXML
     private void testButtonAction(ActionEvent event){
         System.out.println("hi, i'll now attempt to connect!");
-        conex.conectaBD("a7986409","alpha7rho");
-        try{
-            conex.desconectaBD();
-            System.out.println("Desconectado!");
+        conex.setCon(conex.conectaBD("a7986409","alpha7rho"));
+        if(conex.getCon() == null){
+            System.out.println("FALHA DE CONEXA");
         }
-        catch(SQLException ex){
-            System.out.println("ERRO: "+ex);
+        else{
+            try{
+                conex.desconectaBD();
+                System.out.println("Desconectado!");
+            }
+            catch(SQLException ex){
+                System.out.println("ERRO: "+ex);
+            }
         }
     }
     
