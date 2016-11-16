@@ -57,7 +57,7 @@
             <Button fx:id="btnInserir" mnemonicParsing="false" text="Inserir" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="31.0" />
             <ComboBox prefWidth="150.0" AnchorPane.rightAnchor="95.0" AnchorPane.topAnchor="31.0" />
             <Label prefHeight="16.0" prefWidth="132.0" text="Inserir" AnchorPane.rightAnchor="113.0" AnchorPane.topAnchor="11.0" />
-            <Label fx:id="labelConexao" layoutX="16.0" layoutY="552.0" text="Conexão: DESCONECTADO" />
+            <Label fx:id="labelConexao" layoutX="16.0" layoutY="552.0" text="Conexão: DESCONECTADO" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="16.0" />
          </children>
       </AnchorPane>
    </children>
