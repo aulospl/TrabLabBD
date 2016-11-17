@@ -6,13 +6,14 @@
 package emissoralabbd;
 
 import java.net.URL;
+import java.sql.ResultSet;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import javafx.stage.Stage;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 
 /**
@@ -21,6 +22,8 @@ import java.sql.SQLException;
  */
 public class TableDocController implements Initializable {
     ConexaoBD conex = new ConexaoBD();
+    Statement stmt;
+    ResultSet rs;
     
     // Label indicadora de conexão
     @FXML
@@ -38,9 +41,8 @@ public class TableDocController implements Initializable {
     }
     */
     
-    /*
+    /**
     * Abre/fecha conexão com a base, dependendo do contexto.
-    * @trigger ActionEvent
     * @trows SQLException,
     */
     @FXML
@@ -48,15 +50,17 @@ public class TableDocController implements Initializable {
         if(opcaoConectar.getText().equals("Conectar")){
             System.out.println("hi, i'll now attempt to connect!");
             conex.setCon(conex.conectaBD("a7986409","alpha7rho"));
+            
             if(conex.getCon() == null){
                 System.out.println("FALHA DE CONEXA");
                 labelConexao.setText("Conexão: ERRO");
-
             }
             else{
                 System.out.println("Conectado!");
                 labelConexao.setText("Conexão: CONECTADO");
                 opcaoConectar.setText("Desconectar");
+                
+                
             }
         }
         else{
@@ -72,6 +76,23 @@ public class TableDocController implements Initializable {
             }
         }
         
+    }
+    
+    //PARA TESTE APENAS
+    //RETORNA TODOS OS NOMES DOS CAMPEONATOS DAS ATIVIDADES EM AULA
+    @FXML
+    private void testSelect(ActionEvent event){
+        try{
+            stmt = conex.createStatement();
+            rs = stmt.executeQuery("SELECT * FROM CAMPEONATO");
+            while(rs.next()){
+               String nome = rs.getString("NOMECAMP");
+               System.out.println(nome);
+            }
+        }
+        catch(SQLException ex){
+            System.out.println("ERRO: "+ex);
+        }
     }
     
  

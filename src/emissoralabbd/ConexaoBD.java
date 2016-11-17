@@ -8,6 +8,7 @@ package emissoralabbd;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  *
@@ -25,9 +26,23 @@ public class ConexaoBD {
     public Connection getCon(){
         return this.con;
     }
-    /*
+    
+    /**
+    * Cria um statement
+    * @throws SQLException
+    */
+    public Statement createStatement() throws SQLException{
+        try{
+            return this.con.createStatement();
+        }
+        catch(SQLException ex){
+            throw ex;
+        }
+    }
+    /**
     * Conecta à base de dados
-    * @param username, password
+    * @param username
+    * @param password
     * @return Connection
     */
     public static Connection conectaBD (String username, String password){
@@ -49,23 +64,26 @@ public class ConexaoBD {
     }
     
     
-    /*
+    /**
     * Disconecta da base
     * @param con
+    * @throws SQLException
     */
     public void desconectaBD() throws SQLException{
         this.con.close();
     }
     
-    /*
+    /**
     * Efetua commit na base
+    * @throws SQLException
     */
     public void commit() throws SQLException{
         this.con.commit();
     }
     
-    /*
+    /**
     * Efetua rollback na base
+    * @throws SQLException
     */
     public void rollback() throws SQLException{
         this.con.rollback();
