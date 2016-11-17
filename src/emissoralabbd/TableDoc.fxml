@@ -46,7 +46,7 @@
             </TableView>
             <ButtonBar prefHeight="40.0" prefWidth="190.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="586.0" AnchorPane.rightAnchor="14.0">
               <buttons>
-                  <Button fx:id="btnAlterar" mnemonicParsing="false" text="Alterar" />
+                  <Button fx:id="btnAlterar" mnemonicParsing="false" onAction="#testSelect" text="Alterar" />
                 <Button fx:id="btnDeletar" mnemonicParsing="false" text="Deletar" />
               </buttons>
                <opaqueInsets>
