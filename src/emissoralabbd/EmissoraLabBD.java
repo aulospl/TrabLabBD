@@ -10,12 +10,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
+import emissoralabbd.TableDocController;
 /**
  *
  * @author aulos
  */
 public class EmissoraLabBD extends Application {
+    ConexaoBD conex = new ConexaoBD();
     
     @Override
     public void start(Stage stage) throws Exception {
@@ -34,6 +35,20 @@ public class EmissoraLabBD extends Application {
      */
     public static void main(String[] args) {
         launch(args);
+    }
+    
+    /**
+    * Desconecta da base quando fecha janela
+    * @throws Exception
+    */
+    @Override
+    public void stop(){
+        try{
+            conex.desconectaBD();
+        }
+        catch(Exception ex){
+            System.out.println("ERRO "+ex);
+        }
     }
     
 }
