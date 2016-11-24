@@ -39,7 +39,6 @@ public class EmissoraLabBD extends Application {
     
     /**
     * Desconecta da base quando fecha janela
-    * @throws Exception
     */
     @Override
     public void stop(){
